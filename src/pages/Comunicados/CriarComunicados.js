@@ -14,7 +14,7 @@ const CriarComunicados = () => {
   const navigate = useNavigate();
 
   //const [comunicados, setComunicados] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { loading } = useFetch("");
 
   const [titulo, setTitulo] = useState("");
   const [mensagem, setMensagem] = useState("");
@@ -31,12 +31,6 @@ const CriarComunicados = () => {
     return (year + "-" + month + "-" + date).toString();
   }
 
-  const criarComunicados = async (comunicados) => {
-    const response = await axios.post(api + "/comunicados", comunicados, { headers: header });
-    const data = await response.data;    
-    setLoading(false);
-
-  }
 
   const handleCriar = async (e) => {
     e.preventDefault();
@@ -48,20 +42,27 @@ const CriarComunicados = () => {
       data,
     };
 
-    try {
-      criarComunicados(comunicados);
-      setTitulo("");
-      setMensagem("");
-      setData("");
+    console.log(comunicados);
 
-      navigate("/comunicados")
-    } catch (error) {
-      if (error.response.status === 403) {
-        setMensagemError("Acesso negado!")
-      } else {
-        setMensagemError("Error, tente novamente mais tarde!")
-      }
-    }  
+    axios.post(api + "/comunicados", comunicados, { headers: header })
+      .then((response) => {
+        console.log(response.data);
+        setTitulo("");
+        setMensagem("");
+        setData("");
+
+        navigate("/comunicados") 
+      })
+      .catch(function (error) {          
+        if (error.response.status === 403) {
+          setMensagemError("Acesso negado!")
+        } else {            
+          setMensagemError("Error, tente novamente mais tarde!")
+        }
+      });
+    
+     
+    
   };
 
 
@@ -86,7 +87,7 @@ const CriarComunicados = () => {
                 </div>
               </Link>
               <div className="criar-comunicados-form-btn-criar">
-                {loading ? <p>Aguarde!</p> : <input className='criar-comunicados-form-btn-criar' disabled={!titulo || !mensagem} type="submit" value="Criar" onClick={(e) => setData(currentData())} />}
+                {loading ? <p>Aguarde!</p> : <input className='criar-comunicados-form-btn-criar' disabled={!titulo || !mensagem } type="submit" value="Criar" onClick={(e) => setData(currentData())} />}
               </div>
               {mensagemError && <Message msg={mensagemError} type="error" />}
             </form>
