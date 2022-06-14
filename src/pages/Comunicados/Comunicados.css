@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-comunicados-page {
+    width: 100%;    
+    margin: 0 auto;    
+    justify-content: center;
+    width:80%;    
+    align-items: center; 
+    justify-content: center;
+    text-align:center;
+    list-style: none;   
+    padding: 20px;   
+    margin-bottom: 50px;     
+     
+}
+
+.container-comunicados-page li {
+    list-style-type: none;
+}
+
+.container-comunicados-page-items-li {    
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.container-comunicados-page-items {    
+    padding-bottom: 30px;    
+    border-radius: 10px;   
+}
+
+
+.container-comunicados-page-items h2 {
+    background-color: #734C4C;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    min-height: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;    
+    padding: 15px;
+}
+
+.container-comunicados-page-items p {
+    background-color: #C4C4C4;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    min-height: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;    
+    padding: 15px;
+}
+
+.comunicados-form-btn-adicionar {    
+    font-size: 15px;
+    border: none;
+    border-radius: 25px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;     
+    height: 50px;
+    background-color: #4C734C;
+    color:white;
+    width: 20%;
+    margin-left: auto;
+    margin-right: 10%;   
+    display: block
+       
+}
+
+
+.comunicados-form-btn-adicionar:hover{
+    cursor: pointer;
+}
+
+.comunicados-form-btn-editar {   
+    font-size: 12px;
+    border: none;
+    border-radius: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;     
+    height: 35px;
+    background-color: #8A4E4E;
+    color:white;
+    width: 30%;
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+
+.comunicados-form-btn-editar:hover{
+    cursor: pointer;
+}
+
+.comunicados-form-btn-excluir {   
+    font-size: 12px;
+    border: none;
+    border-radius: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;    
+    height: 35px;
+    background-color: #a52a2a;
+    color:white;
+    width: 30%;
+    margin: 0 20px;
+}
+
+::placeholder {
+    color: white;
+    padding-left: 3px;
+}
+
+.comunicados-form-btn-excluir:hover{
+    cursor: pointer;
+}
+
+
+
+

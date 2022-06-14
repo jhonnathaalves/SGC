@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;   
+    flex-wrap: wrap;     
+}
+
+.container img{
+    width: 40%; 
+}
+
+
+@media (min-width: 768px) {
+    .container-dadosPessoais, 
+    .container-comunicados,
+    .container-despesas,
+    .container-ocorrencias,
+    .container-agendamentos,
+    .container-documentos {
+        width:33.33%;        
+        padding: 30px;
+        align-items: center; 
+        justify-content: center;
+        text-align:center;
+        list-style: none;   
+        padding: 20px;   
+        margin-bottom: 50px;         
+    }
+
+    .container-comunicados img,
+    .container-despesas img,
+    .container-agendamentos img,
+    .container-documentos img,
+    .container-dadosPessoais img,
+    .container-ocorrencias img,
+    .container-ocorrencias img {
+        width: 50%;          
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    }
+    
+    .container-dadosPessoais img {
+        margin-top: 10%;
+    }
+    
+   
+    .container-dadosPessoais span, 
+    .container-comunicados span,
+    .container-despesas span,
+    .container-ocorrencias span,
+    .container-agendamentos span,
+    .container-documentos span {
+        margin-top: 15px;    
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 25px;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .container-dadosPessoais, 
+    .container-comunicados,
+    .container-despesas,
+    .container-ocorrencias,
+    .container-agendamentos,
+    .container-documentos {
+        width:50%;
+        padding: 50px;
+        align-items: center; 
+        justify-content: center;
+        text-align:center;
+        list-style: none;   
+        padding: 20px;   
+        margin-bottom: 50px;        
+       
+    }
+
+    .container-comunicados img,
+    .container-despesas img,
+    .container-agendamentos img,
+    .container-documentos img,
+    .container-dadosPessoais img,
+    .container-ocorrencias img,
+    .container-ocorrencias img {
+        width: 50%;          
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    }
+    
+    .container-dadosPessoais img {
+        margin-top: 10%;
+    }
+    
+   
+    .container-dadosPessoais span, 
+    .container-comunicados span,
+    .container-despesas span,
+    .container-ocorrencias span,
+    .container-agendamentos span,
+    .container-documentos span {
+        margin-top: 15px;    
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 25px;
+        text-decoration: none;
+    }   
+ 
+}
+
+@media (max-width: 400px) {
+    .container-dadosPessoais, 
+    .container-comunicados,
+    .container-despesas,
+    .container-ocorrencias,
+    .container-agendamentos,
+    .container-documentos {
+        width:50%;
+        padding: 30px;
+        align-items: center; 
+        justify-content: center;
+        text-align:center;
+        list-style: none;   
+        padding: 20px;   
+        margin-bottom: 50px;
+    }
+
+    .container-comunicados img,
+    .container-despesas img,
+    .container-agendamentos img,
+    .container-documentos img,
+    .container-dadosPessoais img,
+    .container-ocorrencias img,
+    .container-ocorrencias img {
+        width: 70%;          
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    }
+    
+    .container-dadosPessoais img {
+        margin-top: 10%;
+    }
+    
+   
+    .container-dadosPessoais span, 
+    .container-comunicados span,
+    .container-despesas span,
+    .container-ocorrencias span,
+    .container-agendamentos span,
+    .container-documentos span {
+        margin-top: 15px;    
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        text-decoration: none;
+    }
+    
+}   
+
+TouchableOpacity:hover{
+    cursor: pointer;
+}
+
+
+
+

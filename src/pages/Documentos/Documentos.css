@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;    
+}
+
+.container-documentos-page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+    
+
+}
+
+.wrap-documentos {
+    width: 390%;   
+    border-radius: 10px;
+
+    overflow: hidden;
+    padding: 77px 55px 33px 55px;
+
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container-documentos-form-btn {
+    display: flex;
+    flex-wrap: center;
+    justify-content: center;
+    padding-bottom: 30px;   
+}
+
+.documento-form-btn-atas,
+.documento-form-btn-nf,
+.documento-form-btn-convencao,
+.documento-form-btn-documentos-importantes {
+
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #8A4E4E;
+    color:white;
+}
+
+::placeholder {
+    color: white;
+    padding-left: 3px;
+}
+
+.documento-form-btn-atas:hover,
+.documento-form-btn-nf:hover,
+.documento-form-btn-convencao:hover,
+.documento-form-btn-documentos-importantes:hover{
+    cursor: pointer;
+}
