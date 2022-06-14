@@ -3,42 +3,56 @@ import React from 'react'
 import "./Comunicados.css"
 
 import { useState, useEffect } from 'react';
-import { useFetch } from "../../hooks/useFetch";
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import { api, requestConfig } from "../../Utils/Config";
-import { useNavigate } from "react-router-dom";
+import { api } from "../../Utils/Config";
 import Message from "../../components/Message";
-
-const url = "https://sistemagestaocondominio.herokuapp.com/comunicados"
-const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
 
 
 const Comunicados = () => {
 
-
-  const navigate = useNavigate();
-  const [obj, setObj] = useState([]);
-  const { data: items, httpConfig, loading, error } = useFetch(url, { headers });
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const token = localStorage.getItem("token").replace(/"/g, '');
   const header = { "Content-Type": "application/json;charset=UTF-8", "Authorization": `${token}` }
   const [mensagemError, setMensagemError] = useState("");
+  const [mensagemSuccess, setMensagemSuccess] = useState("");
 
-  const handleRemove = (id) => {
+  const recuperarComunicados = async () => {
+    const response = await axios.get(api + "/comunicados", { headers: header });
+    const data = await response.data;
+    setItems(data);
+    setLoading(false);
+
+  }
+
+  useEffect(() => {
     try {
-      axios.delete(api + "/comunicados/" + id, { headers: header })
+      recuperarComunicados();        
+    } catch (error) {
+      setError(true)
+      setMensagemError("Não foi possivel recarregar todos os items!")
+    }
+  }, [])
+
+  const handleRemove = async (id) => {
+    try {
+      await axios.delete(api + "/comunicados/" + id, { headers: header })
         .then((response) => {
-          if (response.status === 204) {           
-            window.location.reload(false);
+          if (response.status === 204) {
+            setMensagemSuccess("Removido com sucesso!")
+            recuperarComunicados();
+
           } else {
             console.log("Ocorreu um erro")
           }
 
         })
-        .catch(function (error) {          
+        .catch(function (error) {
           if (error.response.status === 403) {
             setMensagemError("Acesso negado!")
-          } else {            
+          } else {
             setMensagemError("Error, tente novamente mais tarde!")
           }
         });
@@ -48,7 +62,7 @@ const Comunicados = () => {
 
   };
 
-  const setData = (data) => {    
+  const setData = (data) => {
     let { id } = data;
     localStorage.setItem('ID', id);
   };
@@ -81,12 +95,14 @@ const Comunicados = () => {
                 </div>
               </Link>
               <div className="comunicados-form-btn-excluir">
-                <button className="comunicados-form-btn-excluir" onClick={() => handleRemove(comunicados.id)}>Excluir</button>
+                {!loading && <button className="comunicados-form-btn-excluir" type='button' onClick={() => handleRemove(comunicados.id)}>Excluir</button>}
+                {loading && <button className="comunicados-form-btn-excluir" type='button' disabled >Aguarde...</button>}
               </div>
             </li>
           ))}
       </ul>
       {mensagemError && <Message msg={mensagemError} type="error" />}
+      {mensagemSuccess && <Message msg={mensagemSuccess} type="success" />}
     </div>
   )
 }

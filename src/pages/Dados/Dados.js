@@ -4,61 +4,56 @@ import "./Dados.css";
 
 // components
 import Message from "../../components/Message";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { api } from "../../Utils/Config";
 
 // hooks
-import { useEffect, useState, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useEffect, useState} from "react";
 
-// Redux
-import { getUserDetails } from "../../slices/userSlice";
 
 const Dados = () => {
   const id = localStorage.getItem("id").replace(/"/g, '');
-  //const token = localStorage.getItem("token").replace(/"/g, '');
+  const token = localStorage.getItem("token").replace(/"/g, '');
+  const header = { "Content-Type": "application/json;charset=UTF-8", "Authorization": `${token}` }
+  const [mensagemError, setMensagemError] = useState("");
 
-  const dispatch = useDispatch();
+  const [user, setUser] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-  const { user, loading } = useSelector((state) => state.user);
-  const { user: userAuth } = useSelector((state) => state.auth);
+  const recuperarDados = async () => {
+    const response = await axios.get(api + "/users/" + id, { headers: header });
+    const data = await response.data;
+    setUser(data);
+    setLoading(false);
 
-  const [nome, setNome] = useState("");
-  const [sobrenome, setSobrenome] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [email, setEmail] = useState("");
-  const [telefone, setTelefone] = useState("");
-
-  // Load user data
-  useEffect(() => {   
-    dispatch(getUserDetails(id));
-  }, [dispatch, id]);
-
-  // Reset component message
-  //function resetComponentMessage() {
-    //setTimeout(() => {
-    //  dispatch(resetMessage());
-   // }, 2000);
-  //}
-
-  if (loading) {
-    return <p>Carregando...</p>;
   }
+
+  useEffect(() => {
+    try {
+      recuperarDados();
+    } catch (error) {
+      setError(true)
+      setMensagemError("Não foi possivel recarregar os Dados do usuario!")
+    }
+  }, [])
 
   return (
     <div className="container">
       <div className="container-dados">
         <div className="wrap-dados">
-          <form className="login-form">
-            {/*{loading && <p>Carregando dados...</p>}
-            {error && <p>{error}</p>}*/}
+          
+          
+          {loading ? 
+          <p>Carregando dados...</p> :
+           <form className="login-form">
             <p>Nome:</p>
             <div className="wrap-input">
               <input readOnly className="input" type="nome" placeholder="Nome" value={user.nome || ""} />
             </div>
             <p>Sobrenome:</p>
             <div className="wrap-input">
-              <input readOnly className="input" type="sobrenome" placeholder="Sobrenome" value={user.sobrenome || ""}/>
+              <input readOnly className="input" type="sobrenome" placeholder="Sobrenome" value={user.sobrenome || ""} />
             </div>
             <p>CPF:</p>
             <div className="wrap-input">
@@ -72,7 +67,8 @@ const Dados = () => {
             <div className="wrap-input">
               <input readOnly className="input" type="telefone" placeholder="Telefone" value={user.telefone || ""} />
             </div>
-          </form>
+          </form>}
+          {mensagemError && <Message msg={mensagemError} type="error" />}
         </div>
       </div>
     </div>
