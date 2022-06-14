@@ -31,21 +31,21 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
         {/*{window.location.pathname !== '/login' ? <Header /> : null}*/}
         {auth ? <Header /> : null}         
         <div className="container">
           <Routes>
-            <Route exact path="/" element={auth ? <Home /> : <Navigate to="/login" />} />
-            <Route exact path="/login" element={!auth ? <Login /> : <Navigate to="/" />} />
-            <Route exact path="/dados" element={auth ? <Dados />: <Navigate to="/login" />} />
-            <Route exact path="/agendamentos" element={auth ? <Agendamentos />: <Navigate to="/login" />} />
-            <Route exact path="/despesas" element={auth ? <Despesas />: <Navigate to="/login" />} />
-            <Route exact path="/comunicados" element={auth ? <Comunicados />: <Navigate to="/login" />} />
-            <Route exact path="/comunicados/criar" element={auth ? <CriarComunicados />: <Navigate to="/login" />} />
-            <Route exact path="/comunicados/editar/:id" element={auth ? <EditarComunicados />: <Navigate to="/login" />} />
-            <Route exact path="/documentos" element={auth ?<Documentos />: <Navigate to="/login" />} />
-            <Route exact path="/ocorrencias" element={auth ?<Ocorrencias />: <Navigate to="/login" />} />
+            <Route path="/" element={auth ? <Home /> : <Navigate to="/login" />} />
+            <Route path="/login" element={!auth ? <Login /> : <Navigate to="/" />} />
+            <Route path="/dados" element={auth ? <Dados />: <Navigate to="/login" />} />
+            <Route path="/agendamentos" element={auth ? <Agendamentos />: <Navigate to="/login" />} />
+            <Route path="/despesas" element={auth ? <Despesas />: <Navigate to="/login" />} />
+            <Route path="/comunicados" element={auth ? <Comunicados />: <Navigate to="/login" />} />
+            <Route path="/comunicados/criar" element={auth ? <CriarComunicados />: <Navigate to="/login" />} />
+            <Route path="/comunicados/editar/:id" element={auth ? <EditarComunicados />: <Navigate to="/login" />} />
+            <Route path="/documentos" element={auth ?<Documentos />: <Navigate to="/login" />} />
+            <Route path="/ocorrencias" element={auth ?<Ocorrencias />: <Navigate to="/login" />} />
           </Routes>
         </div>
         {/*<Footer/>*/}
