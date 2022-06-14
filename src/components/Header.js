@@ -1,10 +1,8 @@
-import React,  { useContext } from 'react';
-import { NavLink, Link } from "react-router-dom";
-import { AuthContext } from '../contexts/auth';
+import React from 'react';
+import { NavLink } from "react-router-dom";
 
 //hooks
-import { useState } from "react";
-import { useAuth } from "../hooks/useAuth";
+//import { useAuth } from "../hooks/useAuth";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -14,8 +12,8 @@ import { logout, reset } from "../slices/AuthSlice";
 import "./Header.css"
 
 const Header = () => {
-  const { auth } = useAuth();
-  const { user } = useSelector((state) => state.auth);
+ // const { auth } = useAuth();
+  //const { user } = useSelector((state) => state.auth);
 
   const navigate = useNavigate();
 
