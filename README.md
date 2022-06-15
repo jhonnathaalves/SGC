@@ -1,3 +1,9 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d02c9e25-64be-4542-b210-04fd128c711b/deploy-status)](https://app.netlify.com/sites/sistemagestaocondominio/deploys)
+
+# Front-End Sistema Gestão Condominio
+
+Front end para o Sistema Gestão de Condominio construído para o curso de pós graduação de Engenharia de Software da PUC Minas. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
