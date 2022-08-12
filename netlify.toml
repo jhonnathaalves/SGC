@@ -1,4 +1,4 @@
 [build]
 base = "./"
-command = "CI= npm run build --force"
+command = "CI= npm run build --legacy-peer-deps"
 publish = "./build/"
