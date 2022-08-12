@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.container {
+.container-dp {
     width: 80%;
     max-width: 90%;
     margin: 0 auto;
@@ -23,6 +23,8 @@
     .container-despesas,
     .container-ocorrencias,
     .container-agendamentos,
+    .container-visitas,
+    .container-settings,
     .container-documentos {
         width:33.33%;        
         padding: 30px;
@@ -38,8 +40,9 @@
     .container-despesas img,
     .container-agendamentos img,
     .container-documentos img,
+    .container-visitas img,
     .container-dadosPessoais img,
-    .container-ocorrencias img,
+    .container-settings img,   
     .container-ocorrencias img {
         width: 50%;          
         margin-left: auto;
@@ -56,7 +59,9 @@
     .container-comunicados span,
     .container-despesas span,
     .container-ocorrencias span,
+    .container-visitas span,
     .container-agendamentos span,
+    .container-settings span,
     .container-documentos span {
         margin-top: 15px;    
         margin-left: auto;
@@ -70,7 +75,9 @@
     .container-dadosPessoais, 
     .container-comunicados,
     .container-despesas,
+    .container-visitas,
     .container-ocorrencias,
+    .container-settings,
     .container-agendamentos,
     .container-documentos {
         width:50%;
@@ -88,8 +95,9 @@
     .container-despesas img,
     .container-agendamentos img,
     .container-documentos img,
-    .container-dadosPessoais img,
-    .container-ocorrencias img,
+    .container-visitas img,
+    .container-dadosPessoais img, 
+    .container-settings img,  
     .container-ocorrencias img {
         width: 50%;          
         margin-left: auto;
@@ -106,7 +114,9 @@
     .container-comunicados span,
     .container-despesas span,
     .container-ocorrencias span,
+    .container-visitas span,
     .container-agendamentos span,
+    .container-settings span,
     .container-documentos span {
         margin-top: 15px;    
         margin-left: auto;
@@ -122,6 +132,8 @@
     .container-comunicados,
     .container-despesas,
     .container-ocorrencias,
+    .container-visitas,
+    .container-settings,
     .container-agendamentos,
     .container-documentos {
         width:50%;
@@ -137,15 +149,17 @@
     .container-comunicados img,
     .container-despesas img,
     .container-agendamentos img,
-    .container-documentos img,
+    .container-documentos img,    
     .container-dadosPessoais img,
-    .container-ocorrencias img,
+    .container-visitas img,  
+    .container-settings img, 
     .container-ocorrencias img {
         width: 70%;          
         margin-left: auto;
         margin-right: auto;
         padding: 10px;
     }
+    
     
     .container-dadosPessoais img {
         margin-top: 10%;
@@ -157,6 +171,8 @@
     .container-despesas span,
     .container-ocorrencias span,
     .container-agendamentos span,
+    .container-visitas span,
+    .container-settings span,
     .container-documentos span {
         margin-top: 15px;    
         margin-left: auto;

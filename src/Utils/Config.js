@@ -1,4 +1,5 @@
 export const api = "https://sistemagestaocondominio.herokuapp.com";
+//export const api = "http://localhost:8080";
 
 export const requestConfig = (method = null, data = null, token = null) => {
     let config;

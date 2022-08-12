@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-page-criar-despesas {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;       
+}
+
+.container-criar-despesas {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;       
+
+}
+
+.wrap-criar-despesas {
+    width: 390%;   
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 77px 55px 33px 55px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.criar-despesas-form{
+    width: 100%;
+   
+}
+
+.wrap-criar-despesas-input {
+    width: 100%;
+    position: relative;    
+    margin-bottom: 37px;
+}
+
+.input-criar-despesas{
+    margin-top: 40px;
+    font-size: 20px;    
+    border: none;
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 0 5px;
+    background-color: #807D7D ;
+    color: #FFFFFF;
+}
+
+.css-textinput-11aywtz {
+    font-size: 20px;    
+    border: none;
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 0 5px;
+    background-color: #807D7D;
+    color: #FFFFFF;
+    margin-bottom: 20px;    
+}
+
+.textarea-criar-despesas {
+    font-size: 20px;    
+    border: none;
+    display: block;
+    width: 100%;
+    height: 200px;
+    padding: 0 5px;
+    background-color: #807D7D ;
+    color: #FFFFFF;
+    resize: none;
+}
+
+.criar-despesas-form-btn-cancelar {   
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;    
+    height: 50px;
+    background-color: #a52a2a;
+    color:white;
+    width: 45%;
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+
+.criar-despesas-form-btn-cancelar::placeholder {
+    color: white;
+    padding-left: 3px;
+}
+
+.criar-despesas-form-btn-cancelar:hover{
+    cursor: pointer;
+}
+
+.criar-despesas-form-btn-criar {   
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;    
+    height: 50px;
+    background-color: #4C734C;
+    color:white;
+    width: 45%;
+    margin: 0 20px;    
+    margin-bottom: 20px;
+}
+
+::placeholder {
+    color: white;
+    padding-left: 3px;
+}
+
+.criar-despesas-form-btn-criar:hover{
+    cursor: pointer;
+}

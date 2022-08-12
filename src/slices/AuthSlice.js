@@ -28,14 +28,12 @@ export const register = createAsyncThunk(
 // Logout a user
 export const logout = createAsyncThunk("/logout", async () => {
   await authService.logout();
+  window.location.reload(false);
 });
 
 // Sing in a user
 export const login = createAsyncThunk("/login", async (user, thunkAPI) => {
   const data = await authService.login(user);
-
-  console.log(data)
-
   const erro = data.response || null;
 
   // Check for errors

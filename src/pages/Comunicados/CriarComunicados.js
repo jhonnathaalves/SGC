@@ -20,7 +20,8 @@ const CriarComunicados = () => {
   const [mensagem, setMensagem] = useState("");
   const [mensagemError, setMensagemError] = useState("");
   const [data, setData] = useState("");
-  const token = localStorage.getItem("token").replace(/"/g, '');
+  //const token = localStorage.getItem("token").replace(/"/g, '');
+  const token = sessionStorage.getItem("token").replace(/"/g, ''); 
   const header = { "Content-Type": "application/json;charset=UTF-8", "Authorization": `${token}` }
 
   const currentData = () => {

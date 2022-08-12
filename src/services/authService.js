@@ -11,7 +11,7 @@ const register = async (data) => {
       .catch((err) => err);
 
     if (res) {
-      localStorage.setItem("user", JSON.stringify(res));
+      sessionStorage.setItem("user", JSON.stringify(res));
       //console.log(res.headers.authorization);
       //
     }
@@ -24,9 +24,9 @@ const register = async (data) => {
 
 // Logout a user
 const logout = () => {
-  localStorage.removeItem("user");
-  localStorage.removeItem("token");
-  localStorage.removeItem("id");
+  sessionStorage.removeItem("user");
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("id");
 };
 
 // Sign in a user
@@ -49,9 +49,12 @@ const login = async (data) => {
     }
 
     if (response) {
-      localStorage.setItem("user", JSON.stringify(loggedUser));
-      localStorage.setItem("token", JSON.stringify(token));
-      localStorage.setItem("id", JSON.stringify(id));
+      //localStorage.setItem("user", JSON.stringify(loggedUser));
+      //localStorage.setItem("token", JSON.stringify(token));
+      //localStorage.setItem("id", JSON.stringify(id));
+      sessionStorage.setItem("user", JSON.stringify(loggedUser));
+      sessionStorage.setItem("token", JSON.stringify(token));
+      sessionStorage.setItem("id", JSON.stringify(id));
     }
 
     

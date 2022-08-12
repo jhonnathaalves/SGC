@@ -10,7 +10,7 @@
     margin: 0 auto;    
 }
 
-.container-documentos-page {
+.container-cadastros-page {
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -23,7 +23,7 @@
 
 }
 
-.wrap-documentos {
+.wrap-cadastros {
     width: 390%;   
     border-radius: 10px;
 
@@ -33,17 +33,15 @@
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.container-documentos-form-btn {
+.container-cadastros-form-btn {
     display: flex;
     flex-wrap: center;
     justify-content: center;
     padding-bottom: 30px;   
 }
 
-.documento-form-btn-atas,
-.documento-form-btn-nf,
-.documento-form-btn-convencao,
-.documento-form-btn-documentos-importantes {
+.cadastros-form-btn-unidades,
+.cadastros-form-btn-usuarios{
 
     font-size: 15px;
     border: none;
@@ -60,7 +58,7 @@
 }
 
 
-.documento-form-btn-voltar {
+.cadastros-form-btn-voltar {
     font-size: 15px;
     border: none;
     border-radius: 10px;
@@ -84,77 +82,45 @@
     padding-left: 3px;
 }
 
-.documento-form-btn-atas:hover,
-.documento-form-btn-nf:hover,
-.documento-form-btn-convencao:hover,
-.documento-form-btn-documentos-importantes:hover{
+.cadastros-form-btn-unidades:hover,
+.cadastros-form-btn-usuarios:hover{
     cursor: pointer;
 }
 
-.documento-form-btn-upload {
+.criar-unidades-form-btn {
     font-size: 15px;
     border: none;
     border-radius: 10px;
     line-height: 1.2;
     text-transform: uppercase;
-    display: flex;
+    text-align: center;
+    display: inline-block;    
     justify-content: center;
-    align-items: center;
-    width: 90%;
+    align-items: center;    
     height: 50px;
     background-color: #4C734C;
     color:white;
+    width: 45%;  
+    margin-top: 20px;
+    float: right;     
 }
 
-.inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-
-.inputfile + label {    
-    display: inline-block;
+.cancelar-unidades-form-btn {   
     font-size: 15px;
     border: none;
     border-radius: 10px;
     line-height: 1.2;
     text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 50px;
-    background-color: #8A4E4E;
-    color:white;
-    cursor: pointer;
-    
-}
-
-.inputfile:focus + label,
-.inputfile + label:hover {
-    background-color: #593232;
-}
-
-.file-select {
+    text-align: center;
     display: inline-block;
-    font-size: 15px;
-    border: none;
-    border-radius: 10px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    width: 40%;
+    align-items: center;    
     height: 50px;
-    background-color: #808080;
+    background-color: #a52a2a;
     color:white;
-    cursor: pointer;
+    width: 45%;    
+    margin-top: 20px;
+    float: left;     
+       
 }
 
-.MuiSvgIcon-root {
-    cursor: pointer;
-}

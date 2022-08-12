@@ -4,30 +4,31 @@
     box-sizing: border-box;
 }
 
-.container-ocorrencia-page {
+.container-agendamento-page {
     width: 100%;
     max-width: 90%;
     margin: 0 auto;   
-    justify-content: center; 
+    justify-content: center;
+    margin-top:30px; 
      
 }
 
-.container-ocorrencia-page li {
+.container-agendamento-page li {
     list-style-type: none;
 }
 
-.container-ocorrencia-page-items-li {    
+.container-agendamento-page-items-li {    
     padding-top: 40px;
     padding-bottom: 40px;
 }
 
-.container-ocorrencia-page-items {     
+.container-agendamento-page-items {     
     padding-bottom: 40px;
     border-radius: 10px;   
 }
 
 
-.container-ocorrencia-page-items h2 {
+.container-agendamento-page-items h2 {
     background-color: #734C4C;
     justify-content: center;
     font-size: calc(10px + 2vmin);
@@ -39,7 +40,7 @@
     padding: 15px;
 }
 
-.container-ocorrencia-page-items p {
+.container-agendamento-page-items p {
     background-color: #C4C4C4;
     justify-content: center;
     font-size: calc(10px + 2vmin);
@@ -66,8 +67,25 @@
     color:white;
 }
 
-.MuiBox-root {
+.MuiBox-paper-root {
     margin-top: 20px;
 }
 
-
+.voltar-agendamentos-form-btn {
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;    
+    height: 50px;
+    background-color: #a52a2a;
+    color:white;
+    width: 100%;    
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}

@@ -4,20 +4,34 @@ import "./Comunicados.css"
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { api } from "../../Utils/Config";
 import Message from "../../components/Message";
 
+import Box from '@mui/material/Box';
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
+import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
+import { red, yellow } from '@mui/material/colors';
+
 
 const Comunicados = () => {
+
+  const navigate = useNavigate();
 
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const token = localStorage.getItem("token").replace(/"/g, '');
-  const header = { "Content-Type": "application/json;charset=UTF-8", "Authorization": `${token}` }
+   //const id = localStorage.getItem("id").replace(/"/g, '');
+  //const token = localStorage.getItem("token").replace(/"/g, '');
+  const token = sessionStorage.getItem("token").replace(/"/g, '');
+  const id = sessionStorage.getItem("id").replace(/"/g, ''); 
+  const header = { "Content-Type": "application/json;charset=UTF-8", "Authorization": `${token}` }   
   const [mensagemError, setMensagemError] = useState("");
   const [mensagemSuccess, setMensagemSuccess] = useState("");
+  const [perAdmin,setPerAdmin] = useState(false) 
 
   const recuperarComunicados = async () => {
     const response = await axios.get(api + "/comunicados", { headers: header });
@@ -27,14 +41,33 @@ const Comunicados = () => {
 
   }
 
+  const recuperarPermissões = async () => {
+    
+    const response = await axios.get(api + "/users/" + id + "/roles", { headers: header }); ;
+    const data = await response.data[0];      
+    if(data === "ROLE_ADMIN"){
+      setPerAdmin(true);
+    } 
+
+  }
+ 
+
+
+
   useEffect(() => {
     try {
-      recuperarComunicados();        
+      recuperarComunicados();
+      recuperarPermissões();        
     } catch (error) {
       setError(true)
       setMensagemError("Não foi possivel recarregar todos os items!")
     }
   }, [])
+
+  const handleEdit = (comunicados) => {
+    setData(comunicados);
+    navigate(`/comunicados/editar/${comunicados.id}`);
+  };
 
   const handleRemove = async (id) => {
     try {
@@ -45,7 +78,7 @@ const Comunicados = () => {
             recuperarComunicados();
 
           } else {
-            console.log("Ocorreu um erro")
+            setMensagemError("Ocorreu um erro")
           }
 
         })
@@ -71,14 +104,21 @@ const Comunicados = () => {
 
   return (
     <div className='container-comunicados-page'>
+      <Link to={"/"} style={{ textDecoration: 'none' }}>           
+          <button className='documento-form-btn-voltar'> Voltar </button>           
+      </Link> 
       {/*<h1>Comunicados</h1>*/}
-      <div className="container-btn-add">
-        <Link to={"/comunicados/criar"} style={{ textDecoration: 'none' }}>
-          <div>
-            <button className="comunicados-form-btn-adicionar">Criar</button>
-          </div>
-        </Link>
-      </div>
+      {perAdmin?      
+      <Box sx={{ '& > :not(style)': {m: '45%' } }}>
+        <Link to={"/comunicados/criar"} style={{ textDecoration: 'none' }}>       
+          <Fab size="medium" color="success" aria-label="add" sx={{ my: 1, mx: 'auto' }}>
+            <AddIcon />
+          </Fab>
+        </Link>       
+      </Box>
+      :""}
+      {mensagemError && <Message msg={mensagemError} type="error" />}
+      {mensagemSuccess && <Message msg={mensagemSuccess} type="success" />}
       {loading && <p>Carregando dados...</p>}
       {error && <p>{error}</p>}
       <ul>
@@ -88,21 +128,12 @@ const Comunicados = () => {
               <div className="container-comunicados-page-items">
                 <h2>{comunicados.titulo}</h2>
                 <p>{comunicados.mensagem}</p>
-              </div>
-              <Link to={"/comunicados/editar/" + comunicados.id} style={{ textDecoration: 'none' }}>
-                <div className="comunicados-form-btn-editar">
-                  <button className="comunicados-form-btn-editar" onClick={() => setData(comunicados)}>Editar</button>
-                </div>
-              </Link>
-              <div className="comunicados-form-btn-excluir">
-                {!loading && <button className="comunicados-form-btn-excluir" type='button' onClick={() => handleRemove(comunicados.id)}>Excluir</button>}
-                {loading && <button className="comunicados-form-btn-excluir" type='button' disabled >Aguarde...</button>}
-              </div>
+              </div>              
+              {perAdmin ? <ModeEditOutlineIcon fontSize="large" sx={{ color: yellow[500] , mx: 5 }} onClick={() => handleEdit(comunicados)}/>:""}
+              {perAdmin ? <DeleteIcon fontSize="large" sx={{ color: red[500], mx: 5 }} onClick={() => handleRemove(comunicados.id)}/>:""}
             </li>
           ))}
-      </ul>
-      {mensagemError && <Message msg={mensagemError} type="error" />}
-      {mensagemSuccess && <Message msg={mensagemSuccess} type="success" />}
+      </ul>      
     </div>
   )
 }

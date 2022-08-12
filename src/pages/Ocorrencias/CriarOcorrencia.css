@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-page-criar-ocorrencias {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;       
+}
+
+.container-criar-ocorrencias {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;       
+
+}
+
+.wrap-criar-ocorrencias {
+    width: 390%;   
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 77px 55px 33px 55px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.criar-ocorrencias-form{
+    width: 100%;
+   
+}
+
+.wrap-criar-ocorrencias-input {
+    width: 100%;
+    position: relative;    
+    margin-bottom: 37px;
+}
+
+.input-criar-ocorrencias {
+    font-size: 20px;    
+    border: none;
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 0 5px;
+    background-color: #807D7D ;
+    color: #FFFFFF;
+}
+
+.textarea-editar-ocorrencias {
+    font-size: 20px;    
+    border: none;
+    display: block;
+    width: 100%;
+    height: 200px;
+    padding: 0 5px;
+    background-color: #807D7D ;
+    color: #FFFFFF;
+    resize: none;
+}
+
+.criar-ocorrencias-form-btn-cancelar {   
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;    
+    height: 50px;
+    background-color: #a52a2a;
+    color:white;
+    width: 45%;    
+    margin-top: 20px;
+    float: left; 
+       
+}
+
+.criar-ocorrencias-form-btn-cancelar::placeholder {
+    color: white;
+    padding-left: 3px;
+}
+
+.criar-ocorrencias-form-btn-cancelar:hover{
+    cursor: pointer;
+}
+
+.criar-ocorrencias-form-btn-criar{   
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;    
+    justify-content: center;
+    align-items: center;    
+    height: 50px;
+    background-color: #4C734C;
+    color:white;
+    width: 45%;  
+    margin-top: 20px;
+    float: right;  
+    
+}
+
+::placeholder {
+    color: white;
+    padding-left: 3px;
+}
+
+.criar-ocorrencias-form-btn-criar:hover{
+    cursor: pointer;
+}

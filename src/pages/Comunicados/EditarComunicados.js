@@ -23,13 +23,14 @@ const EditarComunicados = () => {
   const [titulo, setTitulo] = useState('');
   const [mensagem, setMensagem] = useState('');
   const [mensagemError, setMensagemError] = useState("");
-  const token = localStorage.getItem("token").replace(/"/g, '');
+  //const token = localStorage.getItem("token").replace(/"/g, '');
+  const token = sessionStorage.getItem("token").replace(/"/g, '');
   const header = { "Content-Type": "application/json;charset=UTF-8", "Authorization": `${token}` }
   
   const {id} = useParams();
 
   if (!id){
-    const id = localStorage.getItem("ID").replace(/"/g, '');
+    const id = sessionStorage.getItem("ID").replace(/"/g, '');
   }
   
 
