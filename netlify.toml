@@ -1,12 +1,4 @@
-[prepare]
-base = "./"
-command = "CI= npm config set legacy-peer-deps true"
-
-[install]
-base = "./"
-command = "CI= npm i"
-
 [build]
 base = "./"
-command = "CI= npm run build "
+command = "CI= npm run build --legacy-peer-deps"
 publish = "./build/"
