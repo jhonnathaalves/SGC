@@ -1,3 +1,9 @@
+[prepare]
+command = "MUI= npm install @mui/material @emotion/react @emotion/styled --legacy-peer-deps"
+
+[icons]
+command = "MUII= npm install @mui/icons-material --legacy-peer-deps"
+
 [build]
 base = "./"
 command = "CI= npm run build --legacy-peer-deps"
