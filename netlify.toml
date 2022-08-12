@@ -1,6 +1,4 @@
 [build]
 base = "./"
-command = "CI= npm config set legacy-peer-deps true"
-command = "CI= npm i"
 command = "CI= npm run build "
 publish = "./build/"
