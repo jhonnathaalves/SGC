@@ -15,14 +15,14 @@ export default props => {
   const navigate = useNavigate();
   //const token = localStorage.getItem("token").replace(/"/g, '');
   //const header = { "Content-Type": "*/*", "Authorization": `${token}` }
-  //const id = localStorage.getItem("id").replace(/"/g, '');
+  //const id = localStorage.getItem("id").replace(/"/g, '');  
   const token = sessionStorage.getItem("token").replace(/"/g, '');
   const header = { "Content-Type": "*/*", "Authorization": `${token}` }
   const id = sessionStorage.getItem("id").replace(/"/g, '');
   const [perUser, setPerUser] = useState(false);
   const [perAdmin,setPerAdmin] = useState(false); 
 
-  const recuperarPermissões = async () => {
+  const recuperarPermissões = async () => {    
     
     const response = await axios.get(api + "/users/" + id + "/roles", { headers: header }); ;
     const data = await response.data[0];      

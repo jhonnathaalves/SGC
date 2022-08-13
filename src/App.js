@@ -48,7 +48,9 @@ import EditarDados from './pages/Dados/EditarDados';
 import Reset from './pages/Login/Reset';
 
 function App() {
+  localStorage.clear();
   const { auth, loading } = useAuth();
+  
   
   if (loading) {
     return <p>Carregando...</p>;

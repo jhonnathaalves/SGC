@@ -26,7 +26,7 @@ const Header = () => {
 
   const navigate = useNavigate();
   //const token = localStorage.getItem("token").replace(/"/g, '');  
-  //const header = { "Content-Type": "*/*", "Authorization": `${token}` }
+  //const header = { "Content-Type": "*/*", "Authorization": `${token}` }  
   const token = sessionStorage.getItem("token").replace(/"/g, '');
   const header = { "Content-Type": "*/*", "Authorization": `${token}` }
   const id = sessionStorage.getItem("id").replace(/"/g, '');
