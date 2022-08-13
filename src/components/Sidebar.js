@@ -15,7 +15,11 @@ export default props => {
   const navigate = useNavigate();
   //const token = localStorage.getItem("token").replace(/"/g, '');
   //const header = { "Content-Type": "*/*", "Authorization": `${token}` }
-  //const id = localStorage.getItem("id").replace(/"/g, '');  
+  //const id = localStorage.getItem("id").replace(/"/g, '');
+  if (localStorage.length > 0) {
+    localStorage.clear();
+    navigate("/login");
+  } 
   const token = sessionStorage.getItem("token").replace(/"/g, '');
   const header = { "Content-Type": "*/*", "Authorization": `${token}` }
   const id = sessionStorage.getItem("id").replace(/"/g, '');
