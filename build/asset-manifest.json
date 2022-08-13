@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fa562512.css",
+    "main.js": "/static/js/main.b2123658.js",
+    "static/js/787.71df535f.chunk.js": "/static/js/787.71df535f.chunk.js",
+    "static/media/agendamentos.png": "/static/media/agendamentos.3c6131342bdc5a8039a9.png",
+    "static/media/despesas.png": "/static/media/despesas.35b524de07d584f1530e.png",
+    "static/media/dadosPessoais.png": "/static/media/dadosPessoais.899a96b44d92800d78bf.png",
+    "index.html": "/index.html",
+    "main.fa562512.css.map": "/static/css/main.fa562512.css.map",
+    "main.b2123658.js.map": "/static/js/main.b2123658.js.map",
+    "787.71df535f.chunk.js.map": "/static/js/787.71df535f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa562512.css",
+    "static/js/main.b2123658.js"
+  ]
+}
