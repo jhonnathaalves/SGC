@@ -45,7 +45,7 @@ const EditarComunicados = () => {
   }, [])
 
   const handleCancelar = () => {
-    localStorage.removeItem('ID');
+    sessionStorage.removeItem('ID');
     navigate("/comunicados");
   }
 
@@ -65,7 +65,7 @@ const EditarComunicados = () => {
           setMensagem(response.data.mensagem);
 
         }
-        localStorage.removeItem('ID');
+        sessionStorage.removeItem('ID');
         navigate("/comunicados");
 
       }).catch(function (error) {
