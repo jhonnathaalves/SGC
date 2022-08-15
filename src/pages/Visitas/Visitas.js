@@ -117,7 +117,7 @@ const Visitas = () => {
 
   const setData = (data) => {
     let { id } = data;
-    localStorage.setItem('ID', id);
+    sessionStorage.setItem('ID', id);
   };
   return (
     <div className='container-visitas-page'>

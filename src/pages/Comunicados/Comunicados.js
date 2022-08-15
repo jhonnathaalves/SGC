@@ -65,7 +65,9 @@ const Comunicados = () => {
   }, [])
 
   const handleEdit = (comunicados) => {
+    //console.log("Passou por aqui")
     setData(comunicados);
+    //console.log("Setou o setData")
     navigate(`/comunicados/editar/${comunicados.id}`);
   };
 
@@ -97,7 +99,7 @@ const Comunicados = () => {
 
   const setData = (data) => {
     let { id } = data;
-    localStorage.setItem('ID', id);
+    sessionStorage.setItem('ID', id);
   };
 
 
