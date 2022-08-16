@@ -67,9 +67,12 @@ const CriarDespesas = () => {
         descricao,
         valor,
         data,
-    };    
-
-    axios.post(api + "/lancamentos", lancamento, { headers: header })
+    };
+    
+    if(valor === 0){
+      setMensagemError("O valor deve ser maior do que 0")
+    } else {
+      axios.post(api + "/lancamentos", lancamento, { headers: header })
       .then((response) => {        
         setTipoLancamento("");
         setDescricao("");
@@ -85,6 +88,10 @@ const CriarDespesas = () => {
           setMensagemError("Error, tente novamente mais tarde!")
         }
       });
+
+    }
+
+    
     
      
     

@@ -119,7 +119,7 @@ const EditarDados = () => {
             <input className='editar-comunicados-form-btn-cancelar' type="submit" value="Cancelar" onClick={() => handleCancelar()} />
           </div>
           <div className="editar-comunicados-form-btn-editar">
-            <input className='editar-comunicados-form-btn-editar' type="submit" value="Editar" onClick={() => handleEditar()} />
+            <input className='editar-comunicados-form-btn-editar' disabled={!nome || !sobrenome } type="submit" value="Editar" onClick={() => handleEditar()} />
           </div>
           {mensagemError && <Message msg={mensagemError} type="error" />}
         </div>

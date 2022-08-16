@@ -24,22 +24,15 @@ const register = async (data) => {
 
 // Logout a user
 const logout = () => {
-  sessionStorage.removeItem("user");
-  sessionStorage.removeItem("token");
-  sessionStorage.removeItem("id");
+  sessionStorage.clear();
 };
 
 // Sign in a user
 const login = async (data) => {
   const config = requestConfig("POST", data);
 
-  try {
-    //const res = await fetch(api + "/login", config)
-    //.then((res) => res.json())
-    //.catch((err) => err);
-    const response = await createSession(data)
-      //.then((res) => res.json());
-      //.catch((err) => err);
+  try {   
+    const response = await createSession(data)   
     const loggedUser = response.data;
     const token = response.headers.authorization;
     const id = response.data.id;   
@@ -49,9 +42,7 @@ const login = async (data) => {
     }
 
     if (response) {
-      //localStorage.setItem("user", JSON.stringify(loggedUser));
-      //localStorage.setItem("token", JSON.stringify(token));
-      //localStorage.setItem("id", JSON.stringify(id));
+      sessionStorage.clear();
       sessionStorage.setItem("user", JSON.stringify(loggedUser));
       sessionStorage.setItem("token", JSON.stringify(token));
       sessionStorage.setItem("id", JSON.stringify(id));

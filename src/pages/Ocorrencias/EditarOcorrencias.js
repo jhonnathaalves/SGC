@@ -120,7 +120,7 @@ const EditarOcorrencias = () => {
                         <Link to={"/ocorrencias"} style={{ textDecoration: 'none' }}>                        
                           <button className="editar-ocorrencias-form-btn-cancelar" onClick={(e) => localStorage.removeItem('ID')}>Cancelar</button>                        
                         </Link>                        
-                        <input className='editar-ocorrencias-form-btn-editar' disabled={!descricao } type="submit" value="Editar" onClick={(e) => handleEditar(e)} />                        
+                        <input className='editar-ocorrencias-form-btn-editar' disabled={!descricao || !titulo } type="submit" value="Editar" onClick={(e) => handleEditar(e)} />                        
                         {mensagemError && <Message msg={mensagemError} type="error" />}
                     </form>
                 </div>

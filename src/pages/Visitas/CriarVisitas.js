@@ -51,26 +51,26 @@ const CriarVisitas = () => {
 
   const navigate = useNavigate();
   
-  const recuperarDados = async () => {
-    try {
-        const response = await axios.get(api + "/visitas/" + ID, { headers: header });
-        const data = await response.data;       
+  //const recuperarDados = async () => {
+    //try {
+        //const response = await axios.get(api + "/visitas/" + ID, { headers: header });
+        //const data = await response.data;       
         
-        const nome = data.nome;
-        setNome(nome);      
+        //const nome = data.nome;
+        //setNome(nome);      
 
-        setLoading(false);
-    } catch (error) {
-        setError(true);
-        setMensagemError("Não foi possivel recarregar os Dados do usuario!");
-    }
+        //setLoading(false);
+    //} catch (error) {
+        //setError(true);
+        //setMensagemError("Não foi possivel recarregar os Dados do usuario!");
+    //}
    
 
-  }
+  //}
 
-  useEffect(() => {    
-      recuperarDados();    
-  }, [])
+  //useEffect(() => {    
+      //recuperarDados();    
+  //}, [])
 
   const formateData = (Data) => {  
 
@@ -91,12 +91,10 @@ const CriarVisitas = () => {
       bloco,
       unidade,      
     };
-
-    console.log(visita);
+    
 
     axios.post(api + "/visitas", visita, { headers: header })
-      .then((response) => {
-        console.log(response.data);
+      .then((response) => {        
         setHoraEntrada("");
         setNome("");
         setBloco("");

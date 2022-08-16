@@ -63,27 +63,29 @@ const EditarDespesas = () => {
       data,        
     };
     
-    
+    if(valor === 0){
+      setMensagemError("O valor deve ser maior do que 0")
+    } else {
 
-    axios.put(api + "/lancamentos/" + id, lancamento, { headers: header })
-      .then((response) => {
-        if (response.status === 204) {         
-           setTipoLancamento(response.data.tipoLancamento);           
-           setDescricao(response.data.descricao);
-           setValor(response.data.valor);
+      axios.put(api + "/lancamentos/" + id, lancamento, { headers: header })
+        .then((response) => {
+          if (response.status === 204) {         
+            setTipoLancamento(response.data.tipoLancamento);           
+            setDescricao(response.data.descricao);
+            setValor(response.data.valor);
 
-        }
-        localStorage.removeItem('ID');
-        navigate("/despesas");
+          }
+          localStorage.removeItem('ID');
+          navigate("/despesas");
 
-      }).catch(function (error) {
-        if (error.response.status === 403) {
-          setMensagemError("Acesso negado!")
-        } else {
-          setMensagemError("Error, tente novamente mais tarde!")
-        }
-    });
-
+        }).catch(function (error) {
+          if (error.response.status === 403) {
+            setMensagemError("Acesso negado!")
+          } else {
+            setMensagemError("Error, tente novamente mais tarde!")
+          }
+      });
+    }
 
   }  
 
